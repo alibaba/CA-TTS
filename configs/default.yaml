@@ -1,0 +1,42 @@
+# CA-TTS Default Configuration
+
+model:
+  path: null                    # Required: path to model weights
+  family: "qwen"                # "qwen" or "internvl"
+
+sampling:
+  do_sample: true
+  temperature: 1.0
+  top_p: 1.0
+  top_k: 40
+  max_new_tokens: 8192
+  confidence_window_size: 50
+
+self_consistency:
+  num_samples: 8
+  add_noise: false
+  boost_hyperparameter: 0.5
+
+verification:
+  enabled: false
+  tau: 0.5
+  expert_model: "gemini-2.5-pro"
+  max_retries: 3
+
+planner:
+  enabled: false                # Set true to enable LLM-based planning
+  mode: "llm"                   # "llm" (default, uses expert model)
+
+analysis:
+  window_size: 20
+  tail_tokens: 50
+  noise_penalty_type: "linear"
+  linear_penalty_factor: 0.1
+
+runtime:
+  gpu_ids: "0"
+  processes_per_gpu: 1
+
+paths:
+  results_dir: "./results"
+  noise_log: null

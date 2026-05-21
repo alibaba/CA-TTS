@@ -1,0 +1,20 @@
+# Avoid torch 2.6.0 because of CVE-2025-3730 in ctc_loss.
+torch>=2.1.0,!=2.6.0
+torchvision>=0.16.0,!=0.21.0
+transformers>=4.40.0
+accelerate>=0.27.0
+# Avoid Pillow 11.2.x because of CVE-2025-48379 in DDS writing.
+Pillow>=10.0.0,!=11.2.*
+numpy>=1.24.0
+tqdm>=4.65.0
+pyyaml>=6.0
+openai>=1.0.0
+
+# Optional: for InternVL models
+# modelscope>=1.10.0
+
+# Optional: for Gemini API
+# google-generativeai>=0.5.0
+
+# Optional: for Flash Attention
+# flash-attn>=2.5.0

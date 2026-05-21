@@ -1,3 +1,0 @@
-task_name: "math-vista"
-dataset_path: null              # Required: path to testmini.json
-prompt_template: "zero"
